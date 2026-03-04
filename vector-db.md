@@ -1,3 +1,8 @@
+---
+title: Vector Database
+layout: default
+---
+
 # Vector Database
 
 ## Definition

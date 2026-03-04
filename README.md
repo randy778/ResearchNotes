@@ -1,3 +1,9 @@
+---
+title: Home
+layout: home
+nav_order: 1
+---
+
 # Research Notes
 
-Welcome to my personal knowledge base. Use the sidebar to navigate.
+My personal knowledge base.
