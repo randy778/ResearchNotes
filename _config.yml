@@ -1,5 +1,7 @@
 title: Research Notes
 remote_theme: just-the-docs/just-the-docs
+baseurl: "/ResearchNotes"
+url: "https://randy778.github.io"
 plugins:
   - jekyll-remote-theme
   - jekyll-relative-links
