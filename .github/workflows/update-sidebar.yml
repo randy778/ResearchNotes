@@ -1,0 +1,23 @@
+name: Update Sidebar
+on:
+  push:
+    paths:
+      - "**.md"
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate sidebar
+        run: |
+          echo "# Notes" > _sidebar.md
+          find . -name "*.md" \
+            ! -name "_sidebar.md" \
+            ! -name "README.md" \
+            ! -path "./.github/*" | sort | while read f; do
+            name=$(basename "$f" .md)
+            echo "- [$name]($f)" >> _sidebar.md
+          done
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update sidebar"
