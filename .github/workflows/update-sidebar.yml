@@ -16,7 +16,8 @@ jobs:
             ! -name "README.md" \
             ! -path "./.github/*" | sort | while read f; do
             name=$(basename "$f" .md)
-            echo "- [$name]($f)" >> _sidebar.md
+            path="${f#./}"
+            echo "- [$name]($path)" >> _sidebar.md
           done
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
